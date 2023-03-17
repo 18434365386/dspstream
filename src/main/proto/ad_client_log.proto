@@ -1,0 +1,23 @@
+syntax = "proto3";//请在⾮空⾮注释的第⼀⾏指定当前⽂件使⽤的是proto3的语法,默认proto2
+package grpc;//package与java_package有些不同，java_package是定义编译⽣成的java⽂件所在的⽬录，⽽package是对应的java类的命名空间
+option java_package = "com.dx.stream.entity";
+option java_outer_classname = "AdClientLogProto";//要⽣成Java类的名称
+option java_multiple_files = true;//编译后会⽣成多个Message类
+message AdClientLog{
+  string request_id = 1;
+  uint64 timestamp = 2;
+  string device_id = 11;
+  string os = 12;
+  string network = 13;
+  // dmp info
+  string user_id = 51;
+  // ad info
+  string source_type = 100;
+  string bid_type = 101;
+  int64 pos_id = 150;
+  int64 account_id = 151;
+  int64 unit_id = 152;
+  int64 creative_id = 153;
+  // event
+  string event_type = 211;
+}
